@@ -20,10 +20,12 @@ class Combination
             $word = explode(" ", self::fixWord($word));
 
             foreach ($word as &$w) {
-                if (mb_substr($w, 0, 1, "UTF-8") == "-") {
-                    $this->exclude[] = mb_substr($w, 1, encoding:"UTF-8");
-                } else {
-                    $this->include[] = $w;
+                if (!empty($w)) {
+                    if (mb_substr($w, 0, 1, "UTF-8") == "-") {
+                        $this->exclude[] = mb_substr($w, 1, encoding:"UTF-8");
+                    } else {
+                        $this->include[] = $w;
+                    }
                 }
             }
         }

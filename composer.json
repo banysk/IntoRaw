@@ -1,0 +1,14 @@
+{
+    "require": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {"KWGen\\": "src/"}
+    },
+    "autoload-dev": {
+        "psr-4": {"KWGen\\": "src/"}
+    }
+}

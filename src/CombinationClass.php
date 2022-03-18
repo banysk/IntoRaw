@@ -20,7 +20,7 @@ class Combination
             $word = explode(" ", self::fixWord($word));
 
             foreach ($word as &$w) {
-                if ($w[0] == "-") {
+                if (mb_substr($w, 0, 1, "UTF-8") == "-") {
                     $this->exclude[] = mb_substr($w, 1, encoding:"UTF-8");
                 } else {
                     $this->include[] = $w;
@@ -45,7 +45,7 @@ class Combination
         $fixedWord = "";
 
         // восстановление длины
-        if (mb_strlen($word, "UTF-8") <= 2) {
+        if (mb_strlen($word, "UTF-8") <= 2 && !(mb_strlen($word, "UTF-8") == 0)) {
             $fixedWord = '+' . $fixedWord;
         }
 
